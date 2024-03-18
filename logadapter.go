@@ -27,7 +27,7 @@ func (s *logAdapter) Debug(v ...interface{}) {
 }
 
 func (s *logAdapter) Debugf(format string, v ...interface{}) {
-	s.log.Debug(format, v...)
+	s.log.Debug(fmt.Sprintf(format, v...))
 }
 
 func (s *logAdapter) Info(v ...interface{}) {
@@ -35,7 +35,7 @@ func (s *logAdapter) Info(v ...interface{}) {
 }
 
 func (s *logAdapter) Infof(format string, v ...interface{}) {
-	s.log.Info(format, v...)
+	s.log.Info(fmt.Sprintf(format, v...))
 }
 
 func (s *logAdapter) Warn(v ...interface{}) {
@@ -43,7 +43,7 @@ func (s *logAdapter) Warn(v ...interface{}) {
 }
 
 func (s *logAdapter) Warnf(format string, v ...interface{}) {
-	s.log.Warn(format, v...)
+	s.log.Warn(fmt.Sprintf(format, v...))
 }
 
 func (s *logAdapter) Error(v ...interface{}) {
@@ -51,7 +51,7 @@ func (s *logAdapter) Error(v ...interface{}) {
 }
 
 func (s *logAdapter) Errorf(format string, v ...interface{}) {
-	s.log.Error(format, v...)
+	s.log.Error(fmt.Sprintf(format, v...))
 }
 
 func (s *logAdapter) Fatal(v ...interface{}) {
@@ -60,7 +60,7 @@ func (s *logAdapter) Fatal(v ...interface{}) {
 }
 
 func (s *logAdapter) Fatalf(format string, v ...interface{}) {
-	s.log.Error(format, v...)
+	s.log.Error(fmt.Sprintf(format, v...))
 	os.Exit(1)
 }
 
@@ -73,5 +73,5 @@ func (s *logAdapter) Println(v ...interface{}) {
 }
 
 func (s *logAdapter) Printf(format string, v ...interface{}) {
-	s.log.Info(format, v...)
+	s.log.Info(fmt.Sprintf(format, v...))
 }
